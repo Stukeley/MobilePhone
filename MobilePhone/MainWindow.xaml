@@ -4,9 +4,65 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MobilePhone"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+		xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" WindowStyle="None"
+        Title="Main" Height="800" Width="500" Background="Transparent">
+	
     <Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="100"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="100"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="25"/>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="25"/>
+		</Grid.ColumnDefinitions>
+		<!--Content grid's size is 500x800 -->
 
+		<Grid Grid.Row="0" Grid.Column="0">
+			<Border BorderBrush="White" BorderThickness="5 5 0 0" CornerRadius="10,0,0,0" Background="White"/>
+		</Grid>
+
+		<Grid Grid.Row="0" Grid.Column="2">
+			<Border BorderBrush="White" BorderThickness="0 0 5 5" CornerRadius="0,10,0,0" Background="White"/>
+		</Grid>
+
+		<Grid Grid.Row="1" Grid.Column="0" Background="White"/>
+
+		<Grid Grid.Row="1" Grid.Column="2" Background="White"/>
+
+		<Grid Grid.Row="2" Grid.Column="0">
+			<Border BorderBrush="White" BorderThickness="5 0 0 5" CornerRadius="0,0,0,10" Background="White"/>
+		</Grid>
+
+		<Grid Grid.Row="2" Grid.Column="2">
+			<Border BorderBrush="White" BorderThickness="0 5 5 0" CornerRadius="0,0,10,0" Background="White"/>
+		</Grid>
+
+		<Grid Grid.Row="0" Grid.Column="1" Background="White" MouseDown="Grid_MouseDown">
+			<!--Top grid-->
+			<materialDesign:PackIcon Kind="Album" Width="30" Height="30" VerticalAlignment="Center" Margin="160,0,0,0"/>
+			<Border BorderBrush="DarkGray" BorderThickness="0 0 0 5" Width="80" VerticalAlignment="Center" HorizontalAlignment="Center" CornerRadius="5"/>
+			<materialDesign:PackIcon Kind="Circle" Width="20" Height="20" HorizontalAlignment="Center" Margin="0,20"/>
+		</Grid>
+
+		<Grid Grid.Row="2" Grid.Column="1" Background="White">
+			<!--Bottom grid-->
+			<Button x:Name="HomeButton" Style="{StaticResource MaterialDesignFloatingActionMiniLightButton}" Width="80" Height="80"
+					VerticalAlignment="Center" HorizontalAlignment="Center" Click="HomeButton_Click" BorderBrush="Gold" BorderThickness="1">
+				<materialDesign:PackIcon Kind="CropSquare" Foreground="DarkGray" Width="60" Height="60" Margin="0" VerticalAlignment="Center"
+										 HorizontalAlignment="Center"/>
+			</Button>
+		</Grid>
+
+		<Grid x:Name="ContentGrid" Grid.Row="1" Grid.Column="1">
+			<!--Content grid-->
+			<!--Content grid's size is 450x600 -->
+			<ContentPresenter Content="{Binding Content}">
+				
+			</ContentPresenter>
+		</Grid>
     </Grid>
 </Window>

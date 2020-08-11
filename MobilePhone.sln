@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobilePhone", "MobilePhone\MobilePhone.csproj", "{B33E3E95-8705-4CF4-8514-A2589D361EBE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MobilePhone", "MobilePhone\MobilePhone.csproj", "{B33E3E95-8705-4CF4-8514-A2589D361EBE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobilePhoneBase", "MobilePhoneBase\MobilePhoneBase.csproj", "{FE6D54BC-DF88-4651-9B92-CF7E20D0C4ED}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MobilePhone.Base", "MobilePhoneBase\MobilePhone.Base.csproj", "{FE6D54BC-DF88-4651-9B92-CF7E20D0C4ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobilePhoneLogging", "MobilePhoneLogging\MobilePhoneLogging.csproj", "{0067D5BF-D9D9-4ECF-A068-91A39A8214EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MobilePhone.Logging", "MobilePhoneLogging\MobilePhone.Logging.csproj", "{0067D5BF-D9D9-4ECF-A068-91A39A8214EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MobilePhone.Database", "MobilePhone.Database\MobilePhone.Database.csproj", "{ACD508A3-23D0-4D5E-AAF1-2554C5880BE5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{0067D5BF-D9D9-4ECF-A068-91A39A8214EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0067D5BF-D9D9-4ECF-A068-91A39A8214EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0067D5BF-D9D9-4ECF-A068-91A39A8214EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACD508A3-23D0-4D5E-AAF1-2554C5880BE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACD508A3-23D0-4D5E-AAF1-2554C5880BE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACD508A3-23D0-4D5E-AAF1-2554C5880BE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACD508A3-23D0-4D5E-AAF1-2554C5880BE5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

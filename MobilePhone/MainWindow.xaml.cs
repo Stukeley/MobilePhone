@@ -1,28 +1,34 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MobilePhone.ViewModels;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace MobilePhone
 {
-	/// <summary>
-	/// Interaction logic for MainWindow.xaml
-	/// </summary>
 	public partial class MainWindow : Window
 	{
+		private MainWindowViewModel ViewModel;
+
 		public MainWindow()
 		{
 			InitializeComponent();
+
+			ViewModel = new MainWindowViewModel(this);
+
+			this.DataContext = ViewModel;
+
+			ViewModel.ReturnToHomeScreen();
+		}
+
+		private void HomeButton_Click(object sender, RoutedEventArgs e)
+		{
+			ViewModel.ReturnToHomeScreen();
+		}
+
+		private void Grid_MouseDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+		{
+			if (e.ChangedButton == System.Windows.Input.MouseButton.Left)
+			{
+				this.DragMove();
+			}
 		}
 	}
 }
