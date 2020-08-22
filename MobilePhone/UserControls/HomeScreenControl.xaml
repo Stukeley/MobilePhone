@@ -7,9 +7,8 @@
 	         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="450">
-    <Grid Background="DarkOliveGreen">
+    <Grid Background="Transparent">
 		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="*"/>
 			<ColumnDefinition Width="*"/>
 			<ColumnDefinition Width="*"/>
 			<ColumnDefinition Width="*"/>
@@ -20,10 +19,8 @@
 			<RowDefinition Height="*"/>
 			<RowDefinition Height="*"/>
 			<RowDefinition Height="*"/>
-			<RowDefinition Height="*"/>
-			<RowDefinition Height="*"/>
 		</Grid.RowDefinitions>
 
-		<local:IconControl Grid.Row="0" Grid.Column="0" Width="60" Height="60"/>
+		<local:IconControl Grid.Row="0" Grid.Column="0" Width="130" Height="130"/>
 	</Grid>
 </UserControl>

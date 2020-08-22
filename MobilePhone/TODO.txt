@@ -1,4 +1,3 @@
 ﻿0. portfolio: sekcja pokazująca progress (projekt 2k18 -> Algorytmy Szkolne; projekt 2k19 -> Biblioteka; projekt 2k20 -> Mobile Phone)
 1. mobile phone app (with apps like calculator, etc.)
 2. Loading screen with a logo (mine xd)
-3. FUTURE PROJECT XD: card generator from template (deckfense)

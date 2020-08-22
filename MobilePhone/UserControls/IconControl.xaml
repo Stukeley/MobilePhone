@@ -6,15 +6,24 @@
              xmlns:local="clr-namespace:MobilePhone.UserControls"
 			 xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
-             d:DesignHeight="60" d:DesignWidth="60">
-    <Grid>
-		<Border BorderBrush="AliceBlue" BorderThickness="1" CornerRadius="10 10 10 10" Background="AliceBlue">
-			<Grid>
-				<materialDesign:PackIcon x:Name="AppIcon" Width="50" Height="50" VerticalAlignment="Top" HorizontalAlignment="Center"
-								 Foreground="{Binding Foreground}" Kind="{Binding Kind}" Margin="0,2"/>
-				<TextBlock x:Name="AppName" Text="MarginThatIsExtremelybig" FontSize="5" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="2,0,2,5"
+             d:DesignHeight="130" d:DesignWidth="130">
+    <Grid Background="Transparent">
+		<Border BorderBrush="AliceBlue" Background="AliceBlue" BorderThickness="1" CornerRadius="15 15 15 15">
+			<Button x:Name="IconButton" Width="110" Height="110" Background="Transparent" BorderBrush="Transparent" Style="{StaticResource MaterialDesignFlatButton}">
+				<Button.Resources>
+					<Style TargetType="Border">
+						<Setter Property="CornerRadius" Value="6"/>
+					</Style>
+				</Button.Resources>
+				<Button.Content>
+					<Grid Width="110" Height="110" VerticalAlignment="Center" HorizontalAlignment="Center">
+						<materialDesign:PackIcon x:Name="AppIcon" Width="90" Height="90" VerticalAlignment="Top" HorizontalAlignment="Center"
+								 Foreground="{Binding Foreground}" Kind="{Binding Kind}" Margin="0,0,0,0"/>
+						<TextBlock x:Name="AppName" Text="aaaaaaaaaaaaaaaaaa" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="2,0,2,8"
 						   FontFamily="Palatino" Foreground="Black" TextTrimming="CharacterEllipsis"/>
-			</Grid>
+					</Grid>
+				</Button.Content>
+			</Button>
 		</Border>
 	</Grid>
 </UserControl>
