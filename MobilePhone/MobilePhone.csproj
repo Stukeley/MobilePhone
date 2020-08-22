@@ -16,4 +16,10 @@
     <ProjectReference Include="..\MobilePhoneLogging\MobilePhone.Logging.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Logs\SampleLog.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

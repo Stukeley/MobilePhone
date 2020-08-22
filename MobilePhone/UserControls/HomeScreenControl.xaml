@@ -12,6 +12,7 @@
 			<ColumnDefinition Width="*"/>
 			<ColumnDefinition Width="*"/>
 			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
 		</Grid.ColumnDefinitions>
 
 		<Grid.RowDefinitions>
@@ -19,8 +20,9 @@
 			<RowDefinition Height="*"/>
 			<RowDefinition Height="*"/>
 			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
 		</Grid.RowDefinitions>
 
-		<local:IconControl Grid.Row="0" Grid.Column="0" Width="130" Height="130"/>
+		<local:IconControl x:Name="CalculatorIcon" Grid.Row="0" Grid.Column="0" Width="80" Height="80"/>
 	</Grid>
 </UserControl>

@@ -15,5 +15,10 @@ namespace MobilePhone.UserControls
 
 			this.DataContext = ViewModel;
 		}
+
+		private void IconButton_Click(object sender, System.Windows.RoutedEventArgs e)
+		{
+			ViewModel.RunApp();
+		}
 	}
 }

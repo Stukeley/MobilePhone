@@ -5,7 +5,7 @@ namespace MobilePhone
 {
 	public partial class MainWindow : Window
 	{
-		private MainWindowViewModel ViewModel;
+		public MainWindowViewModel ViewModel;
 
 		public MainWindow()
 		{
@@ -16,6 +16,10 @@ namespace MobilePhone
 			this.DataContext = ViewModel;
 
 			ViewModel.ReturnToHomeScreen();
+
+#if DEBUG
+			Logging.Logger.Instance.InsertLog(new Logging.LogEntry("Started application and set Content to HomeScreen."));
+#endif
 		}
 
 		private void HomeButton_Click(object sender, RoutedEventArgs e)

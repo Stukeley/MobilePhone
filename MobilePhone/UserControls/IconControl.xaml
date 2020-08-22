@@ -6,24 +6,23 @@
              xmlns:local="clr-namespace:MobilePhone.UserControls"
 			 xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
-             d:DesignHeight="130" d:DesignWidth="130">
-    <Grid Background="Transparent">
+             d:DesignHeight="80" d:DesignWidth="80">
+	<Grid Background="Transparent">
 		<Border BorderBrush="AliceBlue" Background="AliceBlue" BorderThickness="1" CornerRadius="15 15 15 15">
-			<Button x:Name="IconButton" Width="110" Height="110" Background="Transparent" BorderBrush="Transparent" Style="{StaticResource MaterialDesignFlatButton}">
+			<Button x:Name="IconButton" Width="60" Height="60" Background="Transparent" BorderBrush="Transparent" Style="{StaticResource MaterialDesignFlatButton}"
+					Click="IconButton_Click">
 				<Button.Resources>
 					<Style TargetType="Border">
 						<Setter Property="CornerRadius" Value="6"/>
 					</Style>
 				</Button.Resources>
 				<Button.Content>
-					<Grid Width="110" Height="110" VerticalAlignment="Center" HorizontalAlignment="Center">
-						<materialDesign:PackIcon x:Name="AppIcon" Width="90" Height="90" VerticalAlignment="Top" HorizontalAlignment="Center"
-								 Foreground="{Binding Foreground}" Kind="{Binding Kind}" Margin="0,0,0,0"/>
-						<TextBlock x:Name="AppName" Text="aaaaaaaaaaaaaaaaaa" FontSize="12" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="2,0,2,8"
-						   FontFamily="Palatino" Foreground="Black" TextTrimming="CharacterEllipsis"/>
-					</Grid>
+					<materialDesign:PackIcon x:Name="AppIcon" Width="40" Height="40" VerticalAlignment="Top" HorizontalAlignment="Center"
+								 Foreground="{Binding Foreground}" Kind="{Binding Kind}" Margin="0,-10,0,0"/>
 				</Button.Content>
 			</Button>
 		</Border>
+		<TextBlock x:Name="AppName" Text="Calculator" FontSize="10" HorizontalAlignment="Center" Margin="2,0,2,14" TextAlignment="Center"
+								FontFamily="Palatino" Foreground="Black" TextTrimming="CharacterEllipsis" Width="60" VerticalAlignment="Bottom"/>
 	</Grid>
 </UserControl>

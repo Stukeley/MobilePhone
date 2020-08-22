@@ -1,6 +1,8 @@
 ﻿using MaterialDesignThemes.Wpf;
 using MobilePhone.Base;
 using MobilePhone.Models;
+using MobilePhone.UserControls;
+using System.Windows;
 using System.Windows.Media;
 
 namespace MobilePhone.ViewModels
@@ -48,6 +50,22 @@ namespace MobilePhone.ViewModels
 			set
 			{
 				_app = value;
+				SetAppName();
+				OnPropertyChanged();
+			}
+		}
+
+		private string _appName;
+
+		public string AppName
+		{
+			get
+			{
+				return _appName;
+			}
+			set
+			{
+				_appName = value;
 				OnPropertyChanged();
 			}
 		}
@@ -56,14 +74,64 @@ namespace MobilePhone.ViewModels
 		{
 			Kind = PackIconKind.Close;
 			Foreground = new SolidColorBrush(Colors.Black);
+
+			SetAppName();
 		}
 
-		public void RunApp()
+		private void SetAppName()
 		{
 			switch (App)
 			{
-
+				case PhoneApp.Photos:
+					break;
+				case PhoneApp.Camera:
+					break;
+				case PhoneApp.Settings:
+					break;
+				case PhoneApp.Calculator:
+					AppName = "Calculator";
+					break;
 			}
+		}
+
+		/// <summary>
+		/// Creates a new Control based on the specified App, then adds it to MainWindow's content grid.
+		/// </summary>
+		public void RunApp()
+		{
+#if DEBUG
+			Logging.Logger.Instance.InsertLog(new Logging.LogEntry($"Attempting to run App: {App}"));
+#endif
+
+			switch (App)
+			{
+				case PhoneApp.Photos:
+					break;
+				case PhoneApp.Camera:
+					break;
+				case PhoneApp.Settings:
+					break;
+				case PhoneApp.Calculator:
+
+					var calculator = new CalculatorControl();
+
+					foreach (var win in Application.Current.Windows)
+					{
+						if (win is MainWindow m)
+						{
+							m.ViewModel.ChangeContent(calculator);
+						}
+					}
+
+					break;
+
+				default:
+					return;
+			}
+#if DEBUG
+			Logging.Logger.Instance.InsertLog(new Logging.LogEntry($"Changed content to {App} successfully."));
+#endif
+
 		}
 	}
 }

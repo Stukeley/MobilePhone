@@ -1,6 +1,5 @@
 ﻿using MobilePhone.Base;
 using MobilePhone.UserControls;
-using System.Windows;
 using System.Windows.Controls;
 
 namespace MobilePhone.ViewModels
@@ -17,14 +16,16 @@ namespace MobilePhone.ViewModels
 			set
 			{
 				_content = value;
+				_window.ContentGrid.Children.Clear();
+				_window.ContentGrid.Children.Add(_content);
 				OnPropertyChanged();
 			}
 
 		}
 
-		private Window _window;
+		private MainWindow _window;
 
-		public MainWindowViewModel(Window window)
+		public MainWindowViewModel(MainWindow window)
 		{
 			_window = window;
 		}

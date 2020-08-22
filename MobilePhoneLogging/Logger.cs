@@ -11,9 +11,11 @@ namespace MobilePhone.Logging
 	{
 		private string FilePath { get; set; }
 
-		private Logger _instance;
+		public int CurrentId { get; set; }
 
-		public Logger Instance
+		private static Logger _instance;
+
+		public static Logger Instance
 		{
 			get
 			{
@@ -27,14 +29,18 @@ namespace MobilePhone.Logging
 
 		public Logger()
 		{
-			FilePath = Directory.GetParent(Environment.CurrentDirectory).Parent.FullName + @$"\Logs\Logs {DateTime.Now.ToString("ddMM HHmm")}";
+			FilePath = Directory.GetCurrentDirectory() + @$"\Logs\Log {DateTime.Now:ddMM HHmm}" + ".txt";
+
+			CurrentId = 1;
+
+			InsertLog(new LogEntry("Logger set up successfully."));
 		}
 
-		public void EnterLog(LogEntry log)
+		public void InsertLog(LogEntry log)
 		{
-			using (var writer = new StreamWriter(FilePath))
+			using (var writer = new StreamWriter(FilePath, true))
 			{
-				writer.WriteLine($"{log.Id} {log.DateCreated} {log.Message}");
+				writer.WriteLine($"{CurrentId++} {log.DateCreated} {log.Message}");
 			}
 		}
 	}
